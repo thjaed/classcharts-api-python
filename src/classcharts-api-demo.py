@@ -9,7 +9,7 @@ client = StudentClient(code=code, dob=dob)
 name = client.get_account_data()["data"]["user"]["first_name"]
 print(f"Hi {name}!")
 
-lessons = client.get_lessons("2025-06-08")["data"]
+lessons = client.get_lessons()["data"]
 if len(lessons) > 0:
     print("---YOUR TIMETABLE FOR TODAY---")
     for lesson in lessons:
