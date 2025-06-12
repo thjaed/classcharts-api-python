@@ -258,7 +258,20 @@ class StudentClient(GlobalClient):
 
       if data["success"] == 0:
         raise Exception(data["error"])
-
+      
+    def mark_homework_as_seen(self, task_status_id):
+      url = f"{BASE_URL}/markhomeworkasseen/{task_status_id}"
+      body = f"""pupil_id={self.student_id}"""
+      headers = {
+          "Authorization" : f"Basic {self.session_id}",
+      }
+      
+      response = requests.post(url, data=body, headers=headers)
+      data = response.json()
+      
+      if data["success"] == 0:
+        raise Exception(data["error"])
+      
 class ParentClient(GlobalClient):
   def __init__(self, email, password):
     url = f"{BASE_URL}/login"

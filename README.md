@@ -2,6 +2,8 @@
 An unofficial python wrapper for the ClassCharts API, making it easier for you to make requests.
 
 There is a usage example included called `classcharts_api_demo.py`. It logges you in as a student and tells you your timetable for the current day.
+
+You can view the API docs here: [API Docs](https://classchartsapi.github.io/api-docs/)
 # How to use
 You must have the classcharts_api.py in an accessable place by your script.
 ## Logging in - Student Client
@@ -96,9 +98,20 @@ client.purchase_reward(item_id=123456)
 ```python
 client.tick_homework(task_id=123456)
 ```
+`task_id` found in "data", "id" from response from `get_homework_tasks()`.
+
+Running this request again will untick the homework task.
+
+## Mark homework as Seen
+```python
+client.mark_homework_as_seen(task_status_id=123456)
+```
+A task cannot be marked as uncompleted by running this request again.
+
+Note that the `task_status_id` is different from `task_id` - the value for `task_status_id` can be found under "data", "status", "id". I have no idea why there are two IDs for the same task.
 
 # Parent Specific Methods
-The following methods only work when logged in as a parent
+The following methods only work when logged in as a parent.
 
 ## Select Pupil
 ```python
