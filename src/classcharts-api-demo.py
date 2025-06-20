@@ -13,11 +13,11 @@ lessons = client.get_lessons()["data"]
 if len(lessons) > 0:
     print("---YOUR TIMETABLE FOR TODAY---")
     for lesson in lessons:
-        start_time = datetime.fromisoformat(lesson["start_time"])
+        start_time = datetime.fromisoformat(lesson["start_time"]).strftime("%H:%M")
         subject = lesson["subject_name"]
         teacher = lesson["teacher_name"]
         room = lesson["room_name"]
-        print(f"{start_time.strftime("%H:%M")}: {subject} with {teacher} in {room}")
+        print(f"{start_time}: {subject} with {teacher} in {room}")
     print("------------------------------")
 else:
     print("You have no lessons today :)")

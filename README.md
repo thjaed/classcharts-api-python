@@ -1,5 +1,6 @@
 # ClassCharts API for Python
 An unofficial python wrapper for the ClassCharts API, making it easier for you to make requests.
+There is also a MicroPython version - `uclasscharts_api.py`, this uses `urequests` and `utime`. It is functionally identical to the standard version.
 
 There is a usage example included called `classcharts_api_demo.py`. It logges you in as a student and tells you your timetable for the current day.
 
