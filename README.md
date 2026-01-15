@@ -72,8 +72,9 @@ client.get_detentions()
 ```
 ## Homework Tasks
 ```python
-client.get_homework_tasks(from_date="YYYY-MM-DD", to_date="YYYY-MM-DD")
+client.get_homework_tasks(from_date="YYYY-MM-DD", to_date="YYYY-MM-DD", display_date="issue_date")
 ```
+display_date can be "issue_date" (Default) or "due_date"
 ## Lessons
 ```python
 client.get_lessons(date="YYYY-MM-DD")
